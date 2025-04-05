@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term Deposit Prediction</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,600&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>Will the Client Subscribe to a Term Deposit?</h2>
+        <form id="prediction-form">
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" required>
+            </div>
+
+            <div>
+                <label for="job">Job</label>
+                <select name="job" required>
+                    <option value="" disabled selected>Select job type</option>
+                    <option value="admin.">Admin</option>
+                    <option value="blue-collar">Blue-collar</option>
+                    <option value="entrepreneur">Entrepreneur</option>
+                    <option value="housemaid">Housemaid</option>
+                    <option value="management">Management</option>
+                    <option value="retired">Retired</option>
+                    <option value="self-employed">Self-employed</option>
+                    <option value="services">Services</option>
+                    <option value="student">Student</option>
+                    <option value="technician">Technician</option>
+                    <option value="unemployed">Unemployed</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="marital">Marital Status</label>
+                <select name="marital" required>
+                    <option value="" disabled selected>Select marital status</option>
+                    <option value="divorced">Divorced / Widowed</option>
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="education">Education</label>
+                <select name="education" required>
+                    <option value="" disabled selected>Select education level</option>
+                    <option value="basic.4y">Basic 4 years</option>
+                    <option value="basic.6y">Basic 6 years</option>
+                    <option value="basic.9y">Basic 9 years</option>
+                    <option value="high.school">High School</option>
+                    <option value="illiterate">Illiterate</option>
+                    <option value="professional.course">Professional Course</option>
+                    <option value="university.degree">University Degree</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="default">Has Credit in Default?</label>
+                <select name="default" required>
+                    <option value="" disabled selected>Select credit status</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="housing">Housing Loan</label>
+                <select name="housing" required>
+                    <option value="" disabled selected>Select housing loan status</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="loan">Personal Loan</label>
+                <select name="loan" required>
+                    <option value="" disabled selected>Select personal loan status</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="full-width">
+                <input type="submit" value="Predict">
+            </div>
+
+            <div class="prediction full-width" id="prediction-result"></div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
